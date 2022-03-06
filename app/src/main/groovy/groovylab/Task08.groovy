@@ -12,6 +12,6 @@ class Task08 {
         def input_json = new groovy.json.JsonSlurper().parseText(input)
         def output = input_json.findAll{ (it.value.toString()[0] as int) + (it.value.toString()[1] as int) == 9}
         def output_json = groovy.json.JsonOutput.toJson(output)
-        return output_json.replace("\"","\\\"")
+        return output_json
     }
 }
