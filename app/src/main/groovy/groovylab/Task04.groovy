@@ -8,6 +8,12 @@ package groovylab
 
 class Task04 {
     public static int fib(int n) {
-        throw UnsupportedOperationException('Not Implemented!')
+        def array = [0,1]
+        int count = 2
+        while(count <= n) {
+            array.add(array[count-2]+array[count-1])
+            count++
+        }
+        return array[n]
     }
 }

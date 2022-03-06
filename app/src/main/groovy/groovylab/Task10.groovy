@@ -8,6 +8,8 @@ package groovylab
 
 class Task10 {
     public static String urlText(String url) {
-        throw UnsupportedOperationException('Not Implemented!')
+        def postmanGet = new URL(url)
+        def getConnection = postmanGet.openConnection()
+        return getConnection.responseCode + " " + getConnection.responseMessage
     }
 }

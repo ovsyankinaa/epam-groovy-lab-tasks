@@ -7,6 +7,6 @@ package groovylab
 
 class Task05 {
     public static boolean isIp(String ip) {
-        throw UnsupportedOperationException('Not Implemented!')
+        return ip ==~ /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/
     }
 }

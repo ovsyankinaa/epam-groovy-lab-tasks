@@ -11,6 +11,12 @@ class Task11 {
     private static final String GSTRING_TEMPLATE = "1() 2() 3()"
 
     public static String gstring(String text, int num) {
-        throw UnsupportedOperationException('Not Implemented!')
+        def temp_arr = GSTRING_TEMPLATE.split(" ")
+        def output_str = ""
+        for(i in temp_arr){
+            def i_element = i.replace("()", "")
+            output_str += ( i_element as int == num ? " ${i_element}(${text})":" ${i}")
+        }
+        return output_str.trim()
     }
 }
