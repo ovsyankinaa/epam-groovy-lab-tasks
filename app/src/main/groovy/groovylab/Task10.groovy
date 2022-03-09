@@ -10,6 +10,6 @@ class Task10 {
     public static String urlText(String url) {
         def postmanGet = new URL(url)
         def getConnection = postmanGet.openConnection()
-        return getConnection.responseCode + " " + getConnection.responseMessage
+        return getConnection.getInputStream().getText()
     }
 }
