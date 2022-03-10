@@ -13,6 +13,25 @@ package groovylab
 
 class Task07 {
     public static String encryptThis(String s) {
-        return s.split(" ").collect{(int) it[0]+it[-1]+it[2..-2]+it[1]}.join(" ")
+        def result = ""
+        def temp_word = ""        
+        if (s.length() != 0){
+            for(i in s.split(" ").collect()){
+              if (i.length() == 1){
+                temp_word = (int) i[0]
+              }
+              if (i.length() == 2){
+                temp_word = (int) i[0]+i[1]
+              }              
+              if (i.length() == 3){
+                temp_word = (int) i[0]+i[-1]+i[1]
+              }                            
+              if (i.length() > 3){
+                temp_word = (int) i[0]+i[-1]+i[2..-2]+i[1]
+              }                                  
+              result += " "+temp_word
+            }          
+        }
+        return result.trim()
     }
 }
